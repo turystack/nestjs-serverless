@@ -1,0 +1,80 @@
+{
+	"name": "@turystack/nestjs-serverless",
+	"description": "Serverless handler wrapper for NestJS: normalizes any event source into typed records. AWS built-in.",
+	"private": false,
+	"version": "1.0.0",
+	"type": "module",
+	"sideEffects": false,
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": ">=20"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:cov": "vitest run --coverage",
+		"lint": "biome lint ./src",
+		"format": "biome format --write ./src",
+		"check": "biome check ./src",
+		"check:fix": "biome check --write ./src",
+		"prepack": "pnpm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/turystack/nestjs-serverless.git"
+	},
+	"peerDependencies": {
+		"@nestjs/common": "^11.0.0",
+		"@nestjs/core": "^11.0.0",
+		"@turystack/nestjs-config": "^1.0.0",
+		"@turystack/nestjs-logger": "^1.0.0",
+		"@turystack/nestjs-publisher": "^1.0.0",
+		"reflect-metadata": "^0.2.0",
+		"rxjs": "^7.0.0",
+		"zod": "^4.0.0",
+		"@turystack/nestjs-context": "^1.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.4",
+		"@nestjs/common": "^11.0.0",
+		"@nestjs/core": "^11.0.0",
+		"@nestjs/testing": "^11.0.0",
+		"@turystack/nestjs-config": "^1.0.0",
+		"@turystack/nestjs-logger": "^1.0.0",
+		"@turystack/nestjs-publisher": "^1.0.0",
+		"@vitest/coverage-v8": "^4.1.10",
+		"reflect-metadata": "^0.2.2",
+		"rxjs": "^7.8.0",
+		"superjson": "^2.2.6",
+		"tsc-alias": "^1.9.1",
+		"typescript": "^7.0.2",
+		"vite": "^8.1.5",
+		"vitest": "^4.1.10",
+		"zod": "^4.0.0",
+		"@turystack/nestjs-context": "^1.0.0"
+	},
+	"peerDependenciesMeta": {
+		"@turystack/nestjs-publisher": {
+			"optional": true
+		},
+		"@turystack/nestjs-context": {
+			"optional": true
+		}
+	}
+}
