@@ -14,6 +14,14 @@ export type ParsedRecord = {
 	attempt?: number
 	/** Parsed event body/payload. */
 	body: unknown
+	/**
+	 * Correlation id the publisher travelled with.
+	 *
+	 * Read off the message rather than generated: the chain crossed a process
+	 * boundary here, and a fresh id would break the tie back to the request
+	 * that produced the event. Absent when the producer sent none.
+	 */
+	correlationId?: string
 	/** Record identifier for partial batch failure reporting (e.g. SQS messageId). */
 	recordId?: string
 }

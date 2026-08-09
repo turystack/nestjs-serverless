@@ -76,5 +76,8 @@
 		"@turystack/nestjs-context": {
 			"optional": true
 		}
+	},
+	"dependencies": {
+		"superjson": "^2.2.6"
 	}
 }

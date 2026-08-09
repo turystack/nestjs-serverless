@@ -130,7 +130,10 @@ export const Serverless = {
 									attempt: String(record.attempt),
 								}),
 							},
-							correlationId: correlationOf(record.body),
+							// The envelope is the mechanism; the payload field is the
+							// older convention, kept so a producer that predates it
+							// still ties its chain together.
+							correlationId: record.correlationId ?? correlationOf(record.body),
 						},
 						() => instance.execute(payload),
 					)

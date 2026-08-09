@@ -4,6 +4,7 @@ import type {
 	IServerlessAdapter,
 	ParsedEvent,
 } from '@/serverless.adapter.interface.js'
+import { decodePayload } from '@/serverless.payload.js'
 import type { EventSource } from '@/serverless.types.js'
 
 import type {
@@ -169,7 +170,9 @@ export class AwsServerlessAdapter implements IServerlessAdapter {
 		const envelopes: string[] = []
 		const records = event.Records.map((record, index) => ({
 			attempt: this._attemptOf(record),
-			body: this._parseBody(record.body, index === 0 ? envelopes : []),
+			...decodePayload(
+				this._parseBody(record.body, index === 0 ? envelopes : []),
+			),
 			recordId: record.messageId,
 		}))
 
@@ -182,7 +185,9 @@ export class AwsServerlessAdapter implements IServerlessAdapter {
 	private _parseSns(event: SNSEvent): ParsedEvent {
 		const envelopes: string[] = []
 		const records = event.Records.map((record, index) => ({
-			body: this._parseBody(record.Sns.Message, index === 0 ? envelopes : []),
+			...decodePayload(
+				this._parseBody(record.Sns.Message, index === 0 ? envelopes : []),
+			),
 			recordId: record.Sns.MessageId,
 		}))
 
@@ -210,7 +215,7 @@ export class AwsServerlessAdapter implements IServerlessAdapter {
 		return {
 			records: [
 				{
-					body: event.detail,
+					...decodePayload(event.detail),
 					recordId: event.id,
 				},
 			],
