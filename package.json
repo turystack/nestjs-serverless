@@ -2,7 +2,7 @@
 	"name": "@turystack/nestjs-serverless",
 	"description": "Serverless handler wrapper for NestJS: normalizes any event source into typed records. AWS built-in.",
 	"private": false,
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"type": "module",
 	"packageManager": "pnpm@10.12.3",
 	"sideEffects": false,
