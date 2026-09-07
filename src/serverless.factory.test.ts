@@ -362,7 +362,10 @@ describe('Serverless.create publisher flush', () => {
 					adapter: 'aws',
 				}),
 				PublisherModule.register({
-					adapter: 'event-emitter',
+					adapter: 'aws',
+					aws: {
+						region: 'us-east-1',
+					},
 				}),
 			],
 			providers: [
