@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      superjson:
+        specifier: ^2.2.6
+        version: 2.2.6
     devDependencies:
       '@biomejs/biome':
         specifier: 2.5.4
@@ -21,17 +25,17 @@ importers:
         specifier: ^11.0.0
         version: 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))
       '@turystack/nestjs-config':
-        specifier: file:../nestjs-config
-        version: file:../nestjs-config(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)
+        specifier: ^1.0.0
+        version: 1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)
       '@turystack/nestjs-context':
-        specifier: link:../nestjs-context
-        version: link:../nestjs-context
+        specifier: ^1.0.0
+        version: 1.0.2(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(@turystack/nestjs-logger@1.0.1(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)
       '@turystack/nestjs-logger':
-        specifier: link:../nestjs-logger
-        version: 0.0.3(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)
+        specifier: ^1.0.0
+        version: 1.0.1(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(reflect-metadata@0.2.2)
       '@turystack/nestjs-publisher':
-        specifier: file:../nestjs-publisher
-        version: file:../nestjs-publisher(@aws-sdk/client-eventbridge@3.1090.0)(@aws-sdk/client-sqs@3.1090.0)(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@file:../nestjs-config(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(@turystack/nestjs-context@nestjs-context)(@turystack/nestjs-logger@0.0.3(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(superjson@2.2.6)(zod@4.3.6)
+        specifier: ^2.0.0
+        version: 2.0.0(638051f82812bdc3a79091f8ddacef88)
       '@vitest/coverage-v8':
         specifier: ^4.1.10
         version: 4.1.10(vitest@4.1.10)
@@ -41,9 +45,6 @@ importers:
       rxjs:
         specifier: ^7.8.0
         version: 7.8.2
-      superjson:
-        specifier: ^2.2.6
-        version: 2.2.6
       tsc-alias:
         specifier: ^1.9.1
         version: 1.9.1
@@ -470,33 +471,54 @@ packages:
   '@tokenizer/token@0.3.0':
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
 
-  '@turystack/nestjs-config@file:../nestjs-config':
-    resolution: {directory: ../nestjs-config, type: directory}
+  '@turystack/nestjs-config@1.0.4':
+    resolution: {integrity: sha512-GrYELUXeovy+rQIVPsQQ54sssaiyofp68QzjHQxBTv5YzVbxCPmHU0xGdjCkWzqnpBBS2yJzvAMk/f2rPBDUjA==}
     engines: {node: '>=20'}
     peerDependencies:
       '@nestjs/common': ^11.0.0
       reflect-metadata: ^0.2.0
       zod: ^4.0.0
 
-  '@turystack/nestjs-logger@0.0.3':
-    resolution: {integrity: sha512-0cWL8eqopgpansNFlQ3j9ZGBlbyDPk7c4QIoXj3JsjCVmcJbZE3+K4TMjdZDr1gBcB5PwHoMbuuxymnI6WlidA==}
+  '@turystack/nestjs-context@1.0.2':
+    resolution: {integrity: sha512-pbzalKIrHnzo87f/qRsFFXXpxc/NLpIS7b5+ElnB7iIhCgME5N3sAr9wsN39+dwaUWCdGr41lmTZEkIPRhh7YA==}
+    engines: {node: '>=20'}
     peerDependencies:
       '@nestjs/common': ^11.0.0
       '@nestjs/core': ^11.0.0
+      '@turystack/nestjs-config': ^1.0.0
+      '@turystack/nestjs-database': ^1.0.0
+      '@turystack/nestjs-logger': ^1.0.0
+      '@turystack/nestjs-observability': ^1.0.0
+      reflect-metadata: ^0.2.0
+    peerDependenciesMeta:
+      '@turystack/nestjs-database':
+        optional: true
+      '@turystack/nestjs-logger':
+        optional: true
+      '@turystack/nestjs-observability':
+        optional: true
+
+  '@turystack/nestjs-logger@1.0.1':
+    resolution: {integrity: sha512-0W8cncDn/A78x4RkE7vKbq7rSalgu3UfOAbNIrFFj1suJsl+Fqw0KZ3sKGrQQayZkIY7YaozkKk6oMwSZRG+Qw==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@nestjs/common': ^11.0.0
+      '@nestjs/core': ^11.0.0
+      '@turystack/nestjs-config': ^1.0.0
       reflect-metadata: ^0.2.0
 
-  '@turystack/nestjs-publisher@file:../nestjs-publisher':
-    resolution: {directory: ../nestjs-publisher, type: directory}
+  '@turystack/nestjs-publisher@2.0.0':
+    resolution: {integrity: sha512-NpoAWJYTpS9ARxnghgu18So7Er+84NBeJ1D3+mD5CDtLAI4z31El0sGZf55an2a+yMKFtrp2Wu9EKOpXRe7iXg==}
     engines: {node: '>=20'}
     peerDependencies:
       '@aws-sdk/client-eventbridge': ^3.0.0
       '@aws-sdk/client-sqs': ^3.0.0
       '@nestjs/common': ^11.0.0
       '@nestjs/core': ^11.0.0
-      '@turystack/nestjs-config': '>=0.0.1'
-      '@turystack/nestjs-context': '>=0.0.1'
-      '@turystack/nestjs-database': '>=0.0.1'
-      '@turystack/nestjs-logger': '>=0.0.1'
+      '@turystack/nestjs-config': ^1.0.0
+      '@turystack/nestjs-context': ^1.0.0
+      '@turystack/nestjs-database': ^1.0.0
+      '@turystack/nestjs-logger': ^1.0.0
       drizzle-orm: '>=0.44.0'
       reflect-metadata: ^0.2.0
       superjson: ^2.0.0
@@ -1791,16 +1813,26 @@ snapshots:
 
   '@tokenizer/token@0.3.0': {}
 
-  '@turystack/nestjs-config@file:../nestjs-config(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)':
+  '@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)':
     dependencies:
       '@nestjs/common': 11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2)
       reflect-metadata: 0.2.2
       zod: 4.3.6
 
-  '@turystack/nestjs-logger@0.0.3(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)':
+  '@turystack/nestjs-context@1.0.2(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(@turystack/nestjs-logger@1.0.1(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)':
     dependencies:
       '@nestjs/common': 11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@turystack/nestjs-config': 1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)
+      reflect-metadata: 0.2.2
+    optionalDependencies:
+      '@turystack/nestjs-logger': 1.0.1(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(reflect-metadata@0.2.2)
+
+  '@turystack/nestjs-logger@1.0.1(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(reflect-metadata@0.2.2)':
+    dependencies:
+      '@nestjs/common': 11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/core': 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@turystack/nestjs-config': 1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)
       pino: 9.14.0
       pino-elasticsearch: 8.1.0
       reflect-metadata: 0.2.2
@@ -1808,19 +1840,19 @@ snapshots:
       - '@75lb/nature'
       - supports-color
 
-  '@turystack/nestjs-publisher@file:../nestjs-publisher(@aws-sdk/client-eventbridge@3.1090.0)(@aws-sdk/client-sqs@3.1090.0)(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@file:../nestjs-config(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(@turystack/nestjs-context@nestjs-context)(@turystack/nestjs-logger@0.0.3(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)(superjson@2.2.6)(zod@4.3.6)':
+  '@turystack/nestjs-publisher@2.0.0(638051f82812bdc3a79091f8ddacef88)':
     dependencies:
       '@aws-sdk/client-eventbridge': 3.1090.0
       '@aws-sdk/client-sqs': 3.1090.0
       '@nestjs/common': 11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/core': 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@turystack/nestjs-config': file:../nestjs-config(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)
-      '@turystack/nestjs-logger': 0.0.3(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)
+      '@turystack/nestjs-config': 1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6)
+      '@turystack/nestjs-logger': 1.0.1(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(reflect-metadata@0.2.2)
       reflect-metadata: 0.2.2
       superjson: 2.2.6
       zod: 4.3.6
     optionalDependencies:
-      '@turystack/nestjs-context': link:../nestjs-context
+      '@turystack/nestjs-context': 1.0.2(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(@turystack/nestjs-logger@1.0.1(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(rxjs@7.8.2))(@turystack/nestjs-config@1.0.4(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)(zod@4.3.6))(reflect-metadata@0.2.2))(reflect-metadata@0.2.2)
 
   '@tybys/wasm-util@0.10.3':
     dependencies:
